@@ -1,0 +1,7 @@
+debug: true
+
+spring:
+  application:
+    name: dan-service-tech-starter
+  kafka:
+    bootstrap-servers: localhost:9092
