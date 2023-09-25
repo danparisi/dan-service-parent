@@ -1,3 +1,6 @@
+# Testing properties precedence
+test-property: source-dan-service-tech-starter-application-yaml
+
 dan:
   kafka:
     producer:
@@ -9,6 +12,18 @@ spring:
     kubernetes:
       loadbalancer:
         mode: SERVICE
+    consul:
+      config:
+        format: yaml
+        enabled: true
+        fail-fast: true
+        profileSeparator: '-'
+        watch:
+          enabled: true
+      host: consul-server
+      port: 8500
+  config:
+    import: "optional:consul:${spring.cloud.consul.host}:${spring.cloud.consul.port}/"
   kafka:
     bootstrap-servers: dan-kafka-cluster-kafka-bootstrap:9092
     consumer:
@@ -16,6 +31,9 @@ spring:
 
 management:
   endpoint:
+    env:
+      # For testing property values, not safe for PROD
+      show-values: ALWAYS
     health:
       show-details: "ALWAYS"
   endpoints:

@@ -5,15 +5,14 @@
     <parent>
         <groupId>com.danservice</groupId>
         <artifactId>dan-service-starter-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.4-SNAPSHOT</version>
     </parent>
 
     <artifactId>dan-service-tech-starter</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.7-SNAPSHOT</version>
     <name>dan-service-tech-starter</name>
 
     <properties>
-        <wiremock.version>3.0.1</wiremock.version>
         <log-back.version>1.4.11</log-back.version>
         <logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
         <logback-kafka-appender.version>0.2.0-RC2</logback-kafka-appender.version>
@@ -42,6 +41,10 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-config</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-kubernetes-client-loadbalancer</artifactId>
