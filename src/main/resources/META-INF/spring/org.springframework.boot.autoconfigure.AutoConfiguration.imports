@@ -1,2 +1,3 @@
 com.danservice.techstarter.autoconfigure.WebMvcConfiguration
+com.danservice.techstarter.autoconfigure.GlobalControllerAdvice
 com.danservice.techstarter.autoconfigure.ApplicationConfiguration
