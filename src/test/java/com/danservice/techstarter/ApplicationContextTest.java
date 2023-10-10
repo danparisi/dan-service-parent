@@ -7,12 +7,12 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 
-import static com.danservice.techstarter.DemoApplicationTests.ApplicationTestConfiguration;
+import static com.danservice.techstarter.ApplicationContextTest.ApplicationTestConfiguration;
 
 @EmbeddedKafka
 @SpringBootTest
 @Import(ApplicationTestConfiguration.class)
-class DemoApplicationTests {
+class ApplicationContextTest {
 
 	@Test
 	void contextLoads() {
