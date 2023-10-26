@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.danservice</groupId>
         <artifactId>dan-service-starter-parent</artifactId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.0.10-SNAPSHOT</version>
     </parent>
 
     <artifactId>dan-service-tech-starter</artifactId>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.0.12-SNAPSHOT</version>
     <name>dan-service-tech-starter</name>
 
     <properties>
