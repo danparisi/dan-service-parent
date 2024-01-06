@@ -1,7 +1,31 @@
 # debug: true
 
+dan:
+  kafka:
+    producer:
+      logback: false
+
 spring:
+  main:
+    # Required in order to have same behavior as when running on Jenkins and on PROD
+    cloud-platform: KUBERNETES
+  cloud:
+    kubernetes:
+      # Disabling kubernetes discovery and loadbalancer in order to let spring boot use the mock beans provided into the test configuration
+      discovery:
+        enabled: false
+      loadbalancer:
+        enabled: false
   application:
     name: dan-service-tech-starter
   kafka:
     bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          openfeign: DEBUG
+        retry: DEBUG
+        kubernetes: DEBUG
