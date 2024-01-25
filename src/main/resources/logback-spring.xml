@@ -16,16 +16,16 @@
         </encoder>
     </appender>
 
-    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
-        <target>System.err</target>
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
+    <!--    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">-->
+    <!--        <target>System.err</target>-->
+    <!--        <encoder>-->
+    <!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+    <!--        </encoder>-->
+    <!--    </appender>-->
 
     <appender name="asynchronous-kafka-appender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <layout class="net.logstash.logback.layout.LogstashLayout"/>
+            <!--            <layout class="net.logstash.logback.layout.LogstashLayout"/>-->
             <customFields>{"pod_name":"${pod-name}"}</customFields>
             <customFields>{"namespace":"${namespace}"}</customFields>
             <customFields>{"application_name":"${spring-application-name}"}</customFields>
@@ -42,13 +42,17 @@
         <producerConfig>client.id=${HOSTNAME}-${CONTEXT_NAME}-logback</producerConfig>
     </appender>
 
-    <root level="info">
-        <appender-ref ref="STDOUT"/>
-
-        <if condition='"${kafka-logs-enabled}".contains("true")'>
-            <then>
+    <if condition='"${kafka-logs-enabled}".contains("true")'>
+        <then>
+            <root level="info">
+                <appender-ref ref="STDOUT"/>
                 <appender-ref ref="asynchronous-kafka-appender"/>
-            </then>
-        </if>
-    </root>
+            </root>
+        </then>
+        <else>
+            <root level="info">
+                <appender-ref ref="STDOUT"/>
+            </root>
+        </else>
+    </if>
 </configuration>

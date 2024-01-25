@@ -1,9 +1,6 @@
 # debug: true
 
-dan:
-  kafka:
-    producer:
-      logback: false
+
 
 spring:
   main:
