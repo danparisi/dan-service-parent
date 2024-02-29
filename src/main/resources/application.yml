@@ -4,9 +4,12 @@ test-property: source-dan-service-tech-starter-application-yaml
 dan:
   kafka:
     producer:
+      enabled: true
       logback: true
       topics:
         logs: dan-service-logs
+    consumer:
+      enabled: true
 
 spring:
   cloud:
@@ -85,3 +88,7 @@ resilience4j:
           - java.net.SocketTimeoutException
           - org.apache.http.NoHttpResponseException
           - org.apache.http.conn.ConnectTimeoutException
+
+logging:
+  level:
+    io.kubernetes.client: WARN

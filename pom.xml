@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>dan-service-tech-starter</artifactId>
-    <version>0.0.16</version>
+    <version>0.0.23</version>
     <name>dan-service-tech-starter</name>
 
     <properties>

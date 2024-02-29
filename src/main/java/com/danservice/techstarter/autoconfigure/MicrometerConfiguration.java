@@ -10,7 +10,7 @@ import org.springframework.core.env.Environment;
 
 @Configuration
 @EnableConfigurationProperties(DanServiceProperties.class)
-public class ApplicationConfiguration {
+public class MicrometerConfiguration {
 
     @Bean
     MeterRegistryCustomizer<MeterRegistry> metricsCommonTags(Environment environment) {

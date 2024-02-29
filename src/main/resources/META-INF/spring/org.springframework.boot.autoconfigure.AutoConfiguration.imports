@@ -1,3 +1,5 @@
 com.danservice.techstarter.autoconfigure.WebMvcConfiguration
 com.danservice.techstarter.autoconfigure.GlobalControllerAdvice
-com.danservice.techstarter.autoconfigure.ApplicationConfiguration
+com.danservice.techstarter.autoconfigure.MicrometerConfiguration
+com.danservice.techstarter.autoconfigure.KafkaConsumerConfiguration
+com.danservice.techstarter.autoconfigure.KafkaProducerConfiguration

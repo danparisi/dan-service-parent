@@ -18,15 +18,33 @@ public class DanServiceProperties {
     @Getter
     @Setter
     public static class DanServiceKafkaProperties {
+
+        private boolean enabled = true;
+
         @NotNull
         private Integer maxCheckRate;
+
+        private DanServiceKafkaProducerProperties producer = new DanServiceKafkaProducerProperties();
+        private DanServiceKafkaConsumerProperties consumer = new DanServiceKafkaConsumerProperties();
     }
 
     @Getter
     @Setter
     public static class DanServiceKafkaProducerProperties {
 
-        private DanServiceKafkaProducerProperties producer = new DanServiceKafkaProducerProperties();
+        private boolean enabled = true;
+
+        private boolean logback = true;
+
+        private DanServiceKafkaProducerTopicsProperties topics = new DanServiceKafkaProducerTopicsProperties();
+
+    }
+
+    @Getter
+    @Setter
+    public static class DanServiceKafkaConsumerProperties {
+
+        private boolean enabled = true;
 
     }
 
