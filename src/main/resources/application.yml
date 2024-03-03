@@ -67,6 +67,13 @@ management:
       percentiles-histogram:
         http.server.requests: true
 
+# JDBC tracing disabled by default as it adds too much entropy inside Zipkin charts
+# Can be enabled at service level when investigation is required. Configuration options:
+# https://jdbc-observations.github.io/datasource-micrometer/docs/current/docs/html/#appendix-common-application-properties
+jdbc:
+  datasource-proxy:
+    enabled: false
+
 resilience4j:
   circuitbreaker:
     configs:

@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.danservice</groupId>
         <artifactId>dan-service-starter-parent</artifactId>
-        <version>0.0.21</version>
+        <version>0.0.22</version>
     </parent>
 
     <artifactId>dan-service-tech-starter</artifactId>
-    <version>0.0.23</version>
+    <version>0.0.24</version>
     <name>dan-service-tech-starter</name>
 
     <properties>
@@ -89,6 +89,15 @@
         <dependency>
             <groupId>io.zipkin.reporter2</groupId>
             <artifactId>zipkin-reporter-brave</artifactId>
+        </dependency>
+
+
+        <!--    The Datasource Micrometer provides a Micrometer Tracing instrumentation for JDBC operations.
+                https://jdbc-observations.github.io/datasource-micrometer/docs/current/docs/html/ -->
+        <dependency>
+            <groupId>net.ttddyy.observation</groupId>
+            <artifactId>datasource-micrometer-spring-boot</artifactId>
+            <version>1.0.3</version>
         </dependency>
         <!-- End observability -->
 
