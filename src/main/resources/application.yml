@@ -12,6 +12,9 @@ dan:
       enabled: true
 
 spring:
+  threads:
+    virtual:
+      enabled: true
   cloud:
     loadbalancer:
       retry:
