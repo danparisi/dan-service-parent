@@ -3,7 +3,6 @@ package com.danservice.techstarter;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
 
@@ -20,9 +19,6 @@ public class DanServiceProperties {
     public static class DanServiceKafkaProperties {
 
         private boolean enabled = true;
-
-        @NotNull
-        private Integer maxCheckRate;
 
         private DanServiceKafkaProducerProperties producer = new DanServiceKafkaProducerProperties();
         private DanServiceKafkaConsumerProperties consumer = new DanServiceKafkaConsumerProperties();

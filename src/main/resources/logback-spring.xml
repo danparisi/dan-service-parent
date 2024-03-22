@@ -14,42 +14,29 @@
         </encoder>
     </appender>
 
-    <if condition='"${kafka-logs-enabled}".contains("true")'>
-        <then>
-            <springProperty name="kafka-logs-topic" source="dan.kafka.producer.topics.logs"/>
-            <springProperty name="bootstrap-servers" source="spring.kafka.bootstrap-servers"/>
-            <appender name="asynchronous-kafka-appender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
-                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-                    <!--            <layout class="net.logstash.logback.layout.LogstashLayout"/>-->
-                    <customFields>{"pod_name":"${pod-name}"}</customFields>
-                    <customFields>{"namespace":"${namespace}"}</customFields>
-                    <customFields>{"application_name":"${spring-application-name}"}</customFields>
-                </encoder>
+    <springProperty name="kafka-logs-topic" source="dan.kafka.producer.topics.logs"/>
+    <springProperty name="bootstrap-servers" source="spring.kafka.bootstrap-servers"/>
+    <appender name="asynchronous-kafka-appender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!--            <layout class="net.logstash.logback.layout.LogstashLayout"/>-->
+            <customFields>{"pod_name":"${pod-name}"}</customFields>
+            <customFields>{"namespace":"${namespace}"}</customFields>
+            <customFields>{"application_name":"${spring-application-name}"}</customFields>
+        </encoder>
 
-                <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.HostNameKeyingStrategy"/>
-                <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
+        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.HostNameKeyingStrategy"/>
+        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
 
-                <topic>${kafka-logs-topic}</topic>
-                <producerConfig>acks=0</producerConfig>
-                <producerConfig>linger.ms=100</producerConfig>
-                <producerConfig>max.block.ms=100</producerConfig>
-                <producerConfig>bootstrap.servers=${bootstrap-servers}</producerConfig>
-                <producerConfig>client.id=${HOSTNAME}-${CONTEXT_NAME}-logback</producerConfig>
-            </appender>
-        </then>
-    </if>
+        <topic>${kafka-logs-topic}</topic>
+        <producerConfig>acks=0</producerConfig>
+        <producerConfig>linger.ms=100</producerConfig>
+        <producerConfig>max.block.ms=100</producerConfig>
+        <producerConfig>bootstrap.servers=${bootstrap-servers}</producerConfig>
+        <producerConfig>client.id=${HOSTNAME}-${CONTEXT_NAME}-logback</producerConfig>
+    </appender>
 
-    <if condition='"${kafka-logs-enabled}".contains("true")'>
-        <then>
-            <root level="info">
-                <appender-ref ref="STDOUT"/>
-                <appender-ref ref="asynchronous-kafka-appender"/>
-            </root>
-        </then>
-        <else>
-            <root level="info">
-                <appender-ref ref="STDOUT"/>
-            </root>
-        </else>
-    </if>
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="asynchronous-kafka-appender"/>
+    </root>
 </configuration>

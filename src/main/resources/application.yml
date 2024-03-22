@@ -27,9 +27,9 @@ spring:
           default:
             read-timeout: 5000
             connect-timeout: 1000
-    kubernetes:
-      loadbalancer:
-        mode: SERVICE
+    #    kubernetes:
+    #      loadbalancer:
+    #        mode: SERVICE
     consul:
       config:
         format: yaml

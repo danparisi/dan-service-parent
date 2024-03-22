@@ -1,0 +1,83 @@
+[
+  {
+    "name": "com.danservice.techstarter.SpringProperties",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.danservice.techstarter.SpringProperties$Spring",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.danservice.techstarter.SpringProperties$Cloud",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.danservice.techstarter.SpringProperties$Consul",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "java.net.ConnectException",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "java.net.UnknownHostException",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "java.net.SocketTimeoutException",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.apache.http.NoHttpResponseException",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.apache.http.conn.ConnectTimeoutException",
+    "allPublicMethods": true,
+    "allPublicClasses": true,
+    "allDeclaredMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicConstructors": true,
+    "allDeclaredConstructors": true
+  }
+]

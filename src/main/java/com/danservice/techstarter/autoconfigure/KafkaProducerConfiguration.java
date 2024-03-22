@@ -1,7 +1,7 @@
 package com.danservice.techstarter.autoconfigure;
 
 import io.micrometer.common.KeyValues;
-import org.jetbrains.annotations.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

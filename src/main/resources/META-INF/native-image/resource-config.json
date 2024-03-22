@@ -1,0 +1,16 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": ".*application.*yml"
+      },
+      {
+        "pattern": ".*application.*yaml"
+      },
+      {
+        "pattern": ".*application.*properties"
+      }
+    ],
+    "excludes": []
+  }
+}
