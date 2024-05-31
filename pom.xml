@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.danservice</groupId>
         <artifactId>dan-service-starter-parent</artifactId>
-        <version>0.0.35</version>
+        <version>0.0.52</version>
     </parent>
 
     <artifactId>dan-service-tech-starter</artifactId>
-    <version>0.0.65</version>
+    <version>0.0.83</version>
     <name>dan-service-tech-starter</name>
 
     <properties>
@@ -55,11 +55,16 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--        Temporarily commented out as not ready for AOT support / native image-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-kubernetes-client-loadbalancer</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>io.kubernetes</groupId>
+            <artifactId>client-java-spring-aot-integration</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
@@ -123,12 +128,6 @@
             <groupId>com.github.danielwegener</groupId>
             <artifactId>logback-kafka-appender</artifactId>
             <version>${logback-kafka-appender.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.janino</groupId>
-            <artifactId>janino</artifactId>
-            <version>3.1.10</version>
             <scope>runtime</scope>
         </dependency>
         <!-- End logging -->

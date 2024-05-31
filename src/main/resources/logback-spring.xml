@@ -39,4 +39,5 @@
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="asynchronous-kafka-appender"/>
     </root>
+
 </configuration>

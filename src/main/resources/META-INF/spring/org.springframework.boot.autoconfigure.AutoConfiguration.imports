@@ -3,3 +3,4 @@ com.danservice.techstarter.autoconfigure.GlobalControllerAdvice
 com.danservice.techstarter.autoconfigure.MicrometerConfiguration
 com.danservice.techstarter.autoconfigure.KafkaConsumerConfiguration
 com.danservice.techstarter.autoconfigure.KafkaProducerConfiguration
+com.danservice.techstarter.autoconfigure.DiscoveryClientConfiguration

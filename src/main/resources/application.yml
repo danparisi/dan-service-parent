@@ -1,6 +1,12 @@
 # Testing properties precedence
 test-property: source-dan-service-tech-starter-application-yaml
 
+debug: false
+
+logging:
+  level:
+    io.kubernetes.client: WARN
+
 dan:
   kafka:
     producer:
@@ -12,10 +18,15 @@ dan:
       enabled: true
 
 spring:
+  profiles:
+    active: kubernetes
   threads:
     virtual:
       enabled: true
   cloud:
+    # Disabling refresh as not working with AOT / native images
+    refresh:
+      enabled: false
     loadbalancer:
       retry:
         maxRetriesOnNextServiceInstance: 3
@@ -27,6 +38,8 @@ spring:
           default:
             read-timeout: 5000
             connect-timeout: 1000
+        # Disabling refresh as not working with AOT / native images
+        refresh-enabled: false
     #    kubernetes:
     #      loadbalancer:
     #        mode: SERVICE
@@ -98,7 +111,3 @@ resilience4j:
           - java.net.SocketTimeoutException
           - org.apache.http.NoHttpResponseException
           - org.apache.http.conn.ConnectTimeoutException
-
-logging:
-  level:
-    io.kubernetes.client: WARN
